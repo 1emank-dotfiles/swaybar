@@ -1,0 +1,72 @@
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# ~/.config/sway/keybinds
+#
+# vi: ft=swayconfig
+#
+
+set $super Mod4
+set $alt Mod1
+
+output "*" background ~/Imágenes/wp5768417.jpg fill
+
+#TODO:
+    #Idle, sleep, lock behaviour
+    #clipboard history
+    #notification center
+    #some mouse/friendly launchers
+
+bar {
+    swaybar_command waybar
+}
+
+# Window settigs
+for_window [app_id="^xfce4-appfinder$"] floating enable
+for_window [app_id="^qalculate-gtk$"] floating enable
+
+#general settings
+gaps inner 4
+gaps outer 0
+seat * hide_cursor 10000
+# font Roboto:size=10
+default_border pixel 4
+default_floating_border pixel 0
+floating_modifier $alt
+focus_follows_mouse no
+
+hide_edge_borders smart
+
+#client.<state>         <border> <bg>   <text>  <ind>   <child_border>
+client.focused          #ff6e67 #ff6e67 #ffffff #ffc1bd #ff6e67
+client.unfocused        #444444 #222222 #bbbbbb #222222 #444444
+client.focused_inactive #888888 #333333 #dddddd #333333 #888888
+
+# client.focused          #ff6e67 #ff6e67 #ff6e67 #ffc1bd #ff6e67
+# client.unfocused        #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
+# client.focused_inactive #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
+
+exec wlsunset
+exec blueman-tray
+exec mako
+exec swaync
+
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+input type:keyboard {
+    xkb_layout es
+    xkb_options "caps:swapescape"
+    repeat_rate 35
+    repeat_delay 350
+}
+
+input type:touchpad {
+  click_method clickfinger
+  tap enabled
+  dwt disabled
+  middle_emulation enabled
+  natural_scroll enabled
+}
+
+include ~/.config/sway/keybinds
+include ~/.config/sway/modes

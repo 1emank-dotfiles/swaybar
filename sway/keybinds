@@ -1,0 +1,83 @@
+#
+# ~/.config/sway/keybinds
+#
+# vi: ft=swayconfig
+#
+
+floating_modifier $super normal
+
+bindsym --to-code {
+    ## Programs
+    $super+Return exec foot
+    $super+e exec pcmanfm
+    $super+w exec brave
+    $super+r exec xfce4-appfinder
+    $super+c exec qalculate-gtk
+
+    ## Session
+    $super+g exec swaylock --image Imágenes/wp5768417.jpg -Kl
+    $super+n exec swaync-client -t -sw
+    $super+shift+c reload
+
+    # switch to workspace
+    $super+1 workspace 1
+    $super+2 workspace 2
+    $super+3 workspace 3
+    $super+4 workspace 4
+    $super+5 workspace 5
+    $super+6 workspace 6
+    $super+7 workspace 7
+    $super+8 workspace 8
+    $super+9 workspace 9
+    $super+0 workspace 10
+    $alt+Tab workspace next
+    $alt+Shift+Tab workspace prev
+
+    # move focused container to workspace
+    $super+shift+1 move container to workspace 1
+    $super+shift+2 move container to workspace 2
+    $super+Shift+3 move container to workspace 3
+    $super+Shift+4 move container to workspace 4
+    $super+Shift+5 move container to workspace 5
+    $super+Shift+6 move container to workspace 6
+    $super+Shift+7 move container to workspace 7
+    $super+Shift+8 move container to workspace 8
+    $super+Shift+9 move container to workspace 9
+    $super+Shift+0 move container to workspace 10
+
+    ## Windows
+    # kill focused window
+    $alt+space exec swaymsg input type:touchpad events toggle
+    $alt+F4 kill
+    #resize key
+    $super+z mode "resize"
+    #screenshot controls
+    Print exec grim
+    # enter fullscreen mode for the focused container
+    $super+f fullscreen
+    # change container layout (stacked, tabbed, toggle split)
+    $super+s layout toggle split
+    # focus the parent container
+    $super+a focus parent
+    # focus the child container
+    $super+shift+a focus child
+    # change focus
+    $super+h focus left
+    $super+j focus down
+    $super+k focus up
+    $super+l focus right
+    # move focused window
+    $super+shift+h move left
+    $super+shift+j move down
+    $super+shift+k move up
+    $super+shift+l move right
+
+    # Multimedia keys
+    XF86AudioPlay exec playerctl play-pause
+    XF86AudioNext exec playerctl next
+    XF86AudioPrev exec playerctl previous
+    XF86AudioRaiseVolume exec pamixer -i 5
+    XF86AudioLowerVolume exec pamixer -d 5
+    XF86AudioMute exec pamixer -t
+    XF86AudioMicMute exec pamixer --default-source -t
+}

@@ -1,8 +1,6 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-    font-family: 'Lucida Console', monospace ;
-    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
 }
 
 window#waybar {
@@ -94,7 +92,9 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd {
+#mpd,
+#custom-trackpad {
+    min-width: 20px;
     padding: 0 10px;
     color: #ffffff;
 }

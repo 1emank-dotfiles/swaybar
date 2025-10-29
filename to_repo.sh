@@ -18,5 +18,5 @@ $missing_deps && exit 1
 
 repo_dir="$(dirname "$( realpath "$0")" )"
 
-rsync "$HOME/.config/sway" "$repo_dir" --delete --recursive
-rsync "$HOME/.config/waybar" "$repo_dir" --delete --recursive
+rsync -v "$HOME/.config/sway" "$repo_dir" --delete --recursive
+rsync -v "$HOME/.config/waybar" "$repo_dir" --delete --recursive

@@ -77,24 +77,25 @@ button:hover {
 }
 
 #clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
 #idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd,
-#custom-trackpad {
+#scratchpad {
     min-width: 20px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#mode,
+#power-profiles-daemon,
+#custom-power,
+#custom-trackpad {
+    min-height: 25px;
     padding: 0 10px;
     color: #ffffff;
 }

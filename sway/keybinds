@@ -8,14 +8,14 @@ floating_modifier $super normal
 
 bindsym --to-code {
     ## Programs
-    $super+Return exec foot
-    $super+e exec pcmanfm
-    $super+w exec brave
-    $super+r exec xfce4-appfinder
-    $super+c exec qalculate-gtk
+    $super+Return exec notify-send -t 500 "Launching terminal emulator" && foot
+    $super+e exec notify-send -t 1500 "Launching file explorer" && pcmanfm
+    $super+w exec notify-send -t 3000 "Launching web browser" && brave
+    $super+r exec notify-send -t 1500 "Opening launcher" && xfce4-appfinder
+    $super+c exec notify-send -t 1500 "Launching calculator" && qalculate-gtk
 
     ## Session
-    $super+g exec swaylock --image Imágenes/wp5768417.jpg -Kl
+    $super+g exec swaylock
     $super+n exec swaync-client -t -sw
     $super+shift+c reload
 
@@ -47,7 +47,8 @@ bindsym --to-code {
 
     ## Windows
     # kill focused window
-    $alt+space exec swaymsg input type:touchpad events toggle
+    $alt+space exec ~/.config/sway/waybar/sh/touchpad.sh toggle && pkill -RTMIN+10 waybar
+
     $alt+F4 kill
     #resize key
     $super+z mode "resize"

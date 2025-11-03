@@ -1,0 +1,97 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 25, // Waybar height
+    "spacing": 2, // Gaps between modules
+    "reload_style_on_change": true,
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "backlight",
+        "clock"
+    ],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "bluetooth": {
+        "format-on": "󰂯 {status}",
+        "format-off": "󰂲 {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "clock": {
+        "interval": 1,
+        "tooltip-format": "<small>{calendar}</small>",
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "scroll-step": 10,
+        "tooltip": false,
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ifname} via {gwaddr}", //used to have unknown icon
+        "format-linked": "{ifname} (No IP)", //used to have probably the same unknown icon
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "menu": "on-click",
+        "scroll-step": 5,
+        "format": "{icon}{volume}% {format_source}",
+        "format-bluetooth": "{icon}{volume}% {format_source}",
+        "format-bluetooth-muted": "{icon}󰂲{volume}% {format_source}",
+        "format-muted": " {volume}% {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "{volume}%",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "󰋎 ",
+            "headset": "󰋎 ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
+        "menu-file": "~/.config/sway/waybar/sound_menu.xml",
+        "menu-actions": {
+            "toggle_audio": "pamixer -t",
+            "toggle_mic": "pamixer --default-source -t",
+            "settings": "pavucontrol"
+        }
+    }
+}

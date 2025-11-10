@@ -51,10 +51,10 @@
         }
     },
     "custom/trackpad": {
-        "exec": "~/.config/sway/waybar/sh/touchpad.sh",
+        "exec": "~/.config/sway/sh/touchpad.sh",
         "signal": 10,
         "tooltip": false,
-        "on-click": "~/.config/sway/waybar/sh/touchpad.sh toggle"
+        "on-click": "~/.config/sway/sh/touchpad.sh toggle"
     },
     "power-profiles-daemon": {
       "format": "{icon}",

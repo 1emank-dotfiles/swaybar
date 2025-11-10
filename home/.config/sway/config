@@ -20,6 +20,7 @@ output "*" background ~/Imágenes/wp5768417.jpg fill
 # Window settigs
 for_window [app_id="^xfce4-appfinder$"] floating enable
 for_window [app_id="^qalculate-gtk$"] floating enable
+for_window [app_id="^Alacritty$"] floating enable
 
 #general settings
 gaps inner 4
@@ -42,7 +43,7 @@ client.focused_inactive #888888 #333333 #dddddd #333333 #888888
 # client.unfocused        #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
 # client.focused_inactive #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
 
-exec_always pkill waybar; waybar -c ~/.config/sway/waybar/config.jsonc -s ~/.config/sway/waybar/style.css; waybar -c ~/.config/sway/waybar/alt.jsonc -s ~/.config/sway/waybar/style.css
+exec_always ~/.config/sway/sh/waybar.sh
 exec wlsunset
 # exec blueman-tray
 exec mako

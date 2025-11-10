@@ -47,7 +47,7 @@ bindsym --to-code {
 
     ## Windows
     # kill focused window
-    $alt+space exec ~/.config/sway/waybar/sh/touchpad.sh toggle && pkill -RTMIN+10 waybar
+    $alt+space exec ~/.config/sway/sh/touchpad.sh toggle && pkill -RTMIN+10 waybar
 
     $alt+F4 kill
     #resize key

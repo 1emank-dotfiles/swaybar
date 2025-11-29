@@ -8,7 +8,7 @@
 set $super Mod4
 set $alt Mod1
 
-output "*" background ~/Imágenes/wp5768417.jpg fill
+output * background /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png fill
 
 #TODO:
     #Idle, sleep, lock behaviour
@@ -16,19 +16,13 @@ output "*" background ~/Imágenes/wp5768417.jpg fill
     #notification center
     #some mouse/friendly launchers
 
-
-# Window settigs
-for_window [app_id="^xfce4-appfinder$"] floating enable
-for_window [app_id="^qalculate-gtk$"] floating enable
-for_window [app_id="^Alacritty$"] floating enable
-
 #general settings
 gaps inner 4
 gaps outer 0
 seat * hide_cursor 10000
 # font Roboto:size=10
 default_border pixel 4
-default_floating_border pixel 0
+default_floating_border pixel 1
 floating_modifier $alt
 focus_follows_mouse no
 
@@ -38,10 +32,6 @@ hide_edge_borders smart
 client.focused          #ff6e67 #ff6e67 #ffffff #ffc1bd #ff6e67
 client.unfocused        #444444 #222222 #bbbbbb #222222 #444444
 client.focused_inactive #888888 #333333 #dddddd #333333 #888888
-
-# client.focused          #ff6e67 #ff6e67 #ff6e67 #ffc1bd #ff6e67
-# client.unfocused        #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
-# client.focused_inactive #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8 #b8b8b8
 
 exec_always ~/.config/sway/sh/waybar.sh
 exec wlsunset

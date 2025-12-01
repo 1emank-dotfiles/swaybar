@@ -1,10 +1,9 @@
 #!/bin/sh
 STATE=$(
-        swaymsg -t get_inputs |
-        grep '"type": "touchpad"' -A6 -m 1 |
-        grep send_events |
-        cut -d\" -f4
+    swaymsg -rt get_inputs |
+            jq -r '.[] | select(.type=="touchpad").libinput.send_events'
 )
+
 [ "$1" = toggle ] &&
         if [ "$STATE" = enabled ]
         then swaymsg input type:touchpad events disabled

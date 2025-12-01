@@ -1,0 +1,95 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+#window {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+
+.modules-left,
+.modules-center,
+.modules-right {
+    min-height: 25px;
+    color: #ffffff;
+}
+.module { padding: 0 8px; }
+
+
+#workspaces {
+    padding: 0px;
+}
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+#workspaces button:hover {
+    background: rgba(179, 179, 179, 0.2);
+}
+#workspaces button.focused, #workspaces button.active {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+
+#idle_inhibitor {
+    background-color: rgba(55, 52, 54, 0.7);
+}
+#idle_inhibitor.activated {
+    background-color: rgba(255, 255, 255,0.7);
+    color: rgb(0, 0, 0);
+}
+
+
+#network {
+    background-color: rgba(41, 128, 185, 0.7);
+}
+#network.disconnected {
+    background-color: rgba(240, 60, 60, 0.7);
+}
+
+
+#bluetooth {
+    background-color: rgba(51, 77, 255, 0.7);
+}
+
+
+#backlight { color: #ffffff; }
+#backlight.high {
+    background-color: rgba(255, 255, 255,0.7);
+    color: #000000;
+}
+#backlight.medium { background-color: rgba(128, 128, 128, 0.7); }
+#backlight.low { background-color: rgba(0, 0, 0, 0.7); }
+
+
+#pulseaudio {
+    background-color: rgba(0, 0, 255, 0.7);
+    color: #ffffff;
+}
+#pulseaudio.muted {
+    background-color: rgba(43, 48, 59, 0.5); /* same as window#waybar */
+}
+
+
+/* #clock { <default> } */

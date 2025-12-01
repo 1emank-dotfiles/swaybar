@@ -1,7 +1,6 @@
 pkill 'waybar|waybar.sh'
 
-waybar -c ~/.config/sway/waybar/config.jsonc \
-        -s ~/.config/sway/waybar/style.css &
+prefix="$HOME/.config/sway/waybar"
 
-waybar -c ~/.config/sway/waybar/alt.jsonc \
-        -s ~/.config/sway/waybar/style.css &
+waybar -c "$prefix/bottom.jsonc" -s "$prefix/bottom.css" &
+waybar -c "$prefix/top.jsonc" -s "$prefix/top.css" &

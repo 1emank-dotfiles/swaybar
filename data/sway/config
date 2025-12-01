@@ -33,7 +33,9 @@ client.focused          #ff6e67 #ff6e67 #ffffff #ffc1bd #ff6e67
 client.unfocused        #444444 #222222 #bbbbbb #222222 #444444
 client.focused_inactive #888888 #333333 #dddddd #333333 #888888
 
+exec_always ~/.config/sway/sh/set_wb_lang.sh
 exec_always ~/.config/sway/sh/waybar.sh
+
 exec wlsunset
 # exec blueman-tray
 exec mako
